@@ -1,5 +1,6 @@
 package com.example.demoproject.a_retry;
 
+import com.example.demoproject.exception.IgnoreException;
 import com.example.demoproject.exception.RetryException;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +20,7 @@ public class RetryService {
     private String fallback(String param, Exception ex) {
         // retry에 전부 실패해야 fallback이 실행
         log.info("fallback! your request is " + param);
-        return "Recovered: " + ex.toString();
+        return "Recovered: " + ex.getMessage();
     }
 
     private String callAnotherServer(String param) {

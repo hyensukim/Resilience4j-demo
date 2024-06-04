@@ -19,6 +19,9 @@ public class RetryDemoApplication {
         SpringApplication.run(RetryDemoApplication.class, args);
     }
 
+    /**
+     * Resilience4j 에서 각 상태 변경을 로그를 찍도록 동작을 지정해주기 위한 event-listener
+     */
     @Bean
     public RegistryEventConsumer<Retry> myRegistryEventConsumer() {
 
