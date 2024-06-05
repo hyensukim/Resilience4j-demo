@@ -31,7 +31,7 @@ resilience4j.circuitbreaker:
       slowCallRateThreshold: 60                                 # slidingWindowSize 중 몇 %가 slowCall이면 OPEN으로 만들 것인가?
 
       permittedNumberOfCallsInHalfOpenState: 5                  # HALF_OPEN 상태에서 5번까지는 CLOSE로 가기위해 호출한다.
-      automaticTransitionFromOpenToHalfOpenEnabled: true        # OPEN 상태에서 자동으로 HALF_OPEN으로 갈 것인가?
+      automaticTransitionFromOpenToHalfOpenEnabled: true        # OPEN 상태에서 자동으로 HALF_OPEN으로 갈 것인가?, false 인 경우 다음 요청이 온 뒤 현재 half-open으로 넘어갈 수 있는 상태인지 확인 후 상태 변경.
 
       eventConsumerBufferSize: 10                               # actuator를 위한 이벤트 버퍼 사이즈
 
